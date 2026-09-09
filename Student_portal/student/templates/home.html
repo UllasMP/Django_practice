@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock head %}
+{% block content %} 
+<section>
+    <div class="head">
+        <h1 class="h1" >Student Management Portal</h1>
+   
+    <div class="home">
+        <h1>Wellcome to Home Page</h1>
+        <div class="a">
+            <a href="{% url 'create' %}">Create Student</a>
+            <a href="{% url 'display' %}">Display Student</a>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock content%}
