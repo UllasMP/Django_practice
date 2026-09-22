@@ -9,7 +9,28 @@
     <div class="home">
         <h1>Student Details</h1>
         <div class="a">
-            <a href="">Create Student</a>
+            <a href="">Display Student</a>
+            <table>
+                <thead>
+                    <th>Serial No</th>
+                    <th>Student Name</th>
+                    <th>Student Roll no</th>
+                    <th>Student Marks</th>
+                    <th>Student Subject</th>
+                </thead>
+                <tbody>
+                    {% for i in student %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.roll_no }}</td>
+                        <td>{{ i.roll_no }} </td>
+                        <td>{{ i.marks }}</td>
+                        <td>{{ i.subject }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

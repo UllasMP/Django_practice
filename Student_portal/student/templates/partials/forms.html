@@ -1,0 +1,17 @@
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="">Student Name:</label>
+    <input type="text" name="name" id="" placeholder="Enter student name">
+
+    <label for="">Sudent Roll_no:</label>
+    <input type="number" name="roll_no" id="" placeholder="Enter Student Roll-No">
+
+    <label for="">Student Marks: </label>
+    <input type="number" name="marks"  placeholder="Enter Student Marks" id="">
+    
+    <label for="">Student Subject:</label>
+    <input type="text" placeholder="Student Subject" name="subject" id="">
+
+    <button type="submit"> Create Student </button>
+</form>

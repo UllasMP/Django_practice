@@ -2,14 +2,16 @@
 
 {% load static %}
 
-{% block title %} Home {% endblock %}
+{% block title %} Create_student {% endblock %}
 
 {% block content %} 
 <section>
     <div class="home">
         <h1>Create student</h1>
         <div class="a">
-            <a href="">Display Student</a>
+            <div class="form">
+                {% include 'partials/forms.html' %}
+            </div>
         </div>
     </div>
 </section>
