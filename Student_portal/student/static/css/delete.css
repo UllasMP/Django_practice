@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; color: #334155; background: radial-gradient(circle at top, #fee2e2, transparent 45%), #fff7f7; }
+.delete-page { display: grid; min-height: 100vh; padding: 36px 20px; place-items: center; }
+
+.delete-card { width: min(100%, 500px); padding: 36px; text-align: center; background: rgba(255, 255, 255, .96); border: 1px solid #fecaca; border-radius: 20px; box-shadow: 0 20px 50px rgba(153, 27, 27, .13); animation: warning-in .55s cubic-bezier(.2, .8, .2, 1) both; }
+.warning-icon { display: grid; width: 54px; height: 54px; margin: 0 auto 18px; place-items: center; border-radius: 50%; color: #b91c1c; background: #fee2e2; font-size: 1.75rem; font-weight: 800; animation: pulse .9s ease-in-out 2; }
+.delete-card h1 { margin: 0; color: #991b1b; font-size: clamp(1.55rem, 4vw, 2rem); }
+.delete-message { margin: 16px 0 27px; line-height: 1.6; }
+.delete-message strong { color: #991b1b; }
+.delete-card form { display: flex; justify-content: center; gap: 12px; }
+.delete-button, .cancel-button { padding: 12px 16px; border-radius: 10px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.delete-button { border: 0; color: #fff; background: #dc2626; box-shadow: 0 8px 16px rgba(220, 38, 38, .2); }
+.delete-button:hover { background: #b91c1c; transform: translateY(-2px); box-shadow: 0 12px 22px rgba(220, 38, 38, .28); }
+.cancel-button { color: #475569; background: #f1f5f9; }
+.cancel-button:hover { background: #e2e8f0; transform: translateY(-2px); }
+
+@keyframes warning-in { from { opacity: 0; transform: translateY(22px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes pulse { 50% { transform: scale(1.1); } }
+@media (max-width: 420px) { .delete-card { padding: 28px 20px; } .delete-card form { flex-direction: column; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

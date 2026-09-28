@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock title %}</title>
+    <style>
+        .messages {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: min(360px, calc(100vw - 40px));
+        }
+
+        .alert {
+            padding: 14px 18px;
+            border-radius: 10px;
+            color: #fff;
+            background: #16a34a;
+            box-shadow: 0 12px 25px rgba(22, 163, 74, .25);
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            animation: message-in .4s ease both, message-out .4s ease 4s forwards;
+        }
+
+        .alert.error { background: #dc2626; box-shadow: 0 12px 25px rgba(220, 38, 38, .25); }
+        .alert.warning { color: #78350f; background: #fef3c7; box-shadow: 0 12px 25px rgba(217, 119, 6, .18); }
+        .alert.info { background: #2563eb; box-shadow: 0 12px 25px rgba(37, 99, 235, .25); }
+
+        @keyframes message-in {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes message-out {
+            to { opacity: 0; transform: translateX(30px); visibility: hidden; }
+        }
+    </style>
     {% block head %} {% endblock head %}
 </head>
 <body>
+    {% if messages %}
+        <div class="messages" aria-live="polite">
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
     {% block content %} {% endblock content%}
 </body>
 </html>

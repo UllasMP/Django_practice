@@ -2,16 +2,16 @@
     {% csrf_token %}
 
     <label for="">Student Name:</label>
-    <input type="text" name="name" id="" placeholder="Enter student name">
+    <input type="text" name="name" id="" placeholder="Enter student name" value="{{ student.name }}">
 
     <label for="">Sudent Roll_no:</label>
-    <input type="number" name="roll_no" id="" placeholder="Enter Student Roll-No">
+    <input type="number" name="roll_no" id="" placeholder="Enter Student Roll-No" value="{{ student.roll_no }}">
 
     <label for="">Student Marks: </label>
-    <input type="number" name="marks"  placeholder="Enter Student Marks" id="">
+    <input type="number" name="marks"  placeholder="Enter Student Marks" id="" value="{{ student.marks}}">
     
     <label for="">Student Subject:</label>
-    <input type="text" placeholder="Student Subject" name="subject" id="">
+    <input type="text" placeholder="Student Subject" name="subject" id="" value="{{ student.subject }}">
 
     <button type="submit"> Create Student </button>
 </form>

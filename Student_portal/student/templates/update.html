@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Update_student {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+{% endblock head %}
+
+
+{% block content %} 
+<section class="update-page">
+    <div class="main update-card">
+        <h1>Update Student Details</h1>
+        <div class="form">
+            {% include 'partials/forms.html' %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

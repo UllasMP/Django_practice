@@ -3,15 +3,22 @@
 {% load static %}
 
 {% block title %} Create_student {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
+{% endblock head %}
 
 {% block content %} 
-<section>
-    <div class="home">
+<section class="create-page">
+    <div class="home create-card">
         <h1>Create student</h1>
         <div class="a">
             <div class="form">
                 {% include 'partials/forms.html' %}
             </div>
+        </div>
+        <div class="page-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'display' %}">Display Students</a>
         </div>
     </div>
 </section>

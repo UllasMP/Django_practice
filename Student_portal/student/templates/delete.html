@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Delete Student{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock head %}
+
+{% block content %}
+<section class="delete-page">
+<div class="main delete-card">
+    <p class="warning-icon" aria-hidden="true">!</p>
+    <h1>Delete Student Record?</h1>
+    <p class="delete-message">Are you sure you want to delete <strong>{{ student.name }}</strong>'s record? This action cannot be undone.</p>
+    
+    <form action="" method="POST">
+          {% csrf_token %}
+        <button class="delete-button" type="submit">Delete record</button>
+        <a class="cancel-button" href="{% url 'display' %}">Cancel</a>
+    </form>
+</div>
+</section>
+{% endblock content %}
