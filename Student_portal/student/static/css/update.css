@@ -18,6 +18,9 @@ body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; color: #172
 .form label { margin-top: 8px; font-size: .9rem; font-weight: 700; color: #334155; }
 .form input { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font: inherit; outline: none; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
 .form input:focus { border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37, 99, 235, .14); transform: translateY(-1px); }
+.form input[aria-invalid="true"] { border-color: #dc2626; }
+.field-error, .form-errors { color: #b91c1c; font-size: .85rem; font-weight: 600; }
+.form-errors { padding: 10px; border-radius: 8px; background: #fef2f2; }
 .form button { margin-top: 15px; padding: 13px; border: 0; border-radius: 10px; color: #fff; background: #2563eb; box-shadow: 0 8px 16px rgba(37, 99, 235, .22); cursor: pointer; font: inherit; font-weight: 700; transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
 .form button:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 12px 22px rgba(37, 99, 235, .28); }
 
